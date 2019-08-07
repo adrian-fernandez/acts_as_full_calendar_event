@@ -8,6 +8,7 @@ describe ActsAsFullCalendarEvent do
     expect(Event.respond_to?(:calendar_items_filter_by_user)).to eq(true)
     expect(Event.respond_to?(:calendar_items_filter_by_date)).to eq(true)
     expect(Event.respond_to?(:calendar_items_categories)).to eq(true)
+    expect(Event.respond_to?(:calendar_category_class)).to eq(true)
     expect(Event.new.respond_to?(:calendar_item_start_at)).to eq(true)
     expect(Event.new.respond_to?(:calendar_item_end_at)).to eq(true)
     expect(Event.new.respond_to?(:calendar_item_title)).to eq(true)
@@ -16,7 +17,6 @@ describe ActsAsFullCalendarEvent do
     expect(Event.new.respond_to?(:calendar_item_url)).to eq(true)
     expect(Event.new.respond_to?(:calendar_item_link_data_toggle)).to eq(true)
     expect(Event.new.respond_to?(:calendar_item_link_data_target)).to eq(true)
-    expect(Event.new.respond_to?(:calendar_category_class)).to eq(true)
   end
 
   context "methods return value" do
@@ -53,6 +53,10 @@ describe ActsAsFullCalendarEvent do
       expect(Event.calendar_items_categories.map(&:name)).to eq(["Category 1", "Category 2", "Category 3"])
     end
 
+    it "#calendar_category_class" do
+      expect(Event.calendar_category_class).to eq(Category)
+    end
+
     it "#calendar_item_start_at" do
       expect(event1.calendar_item_start_at).to eq(Date.new(2018, 1, 1))
     end
@@ -83,10 +87,6 @@ describe ActsAsFullCalendarEvent do
 
     it "#calendar_item_link_data_target" do
       expect(event1.calendar_item_link_data_target).to eq("#modal")
-    end
-
-    it "#calendar_category_class" do
-      expect(event1.calendar_category_class).to eq(Category)
     end
   end
 end

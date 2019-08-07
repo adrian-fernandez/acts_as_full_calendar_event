@@ -29,6 +29,10 @@ module ActsAsFullCalendarEvent
         return [] unless self.respond_to?(acts_as_full_calendar_event_options[:method_categories])
         self.public_send(acts_as_full_calendar_event_options[:method_categories])
       end
+
+      def calendar_category_class
+        self.public_send(acts_as_full_calendar_event_options[:field_category_class])
+      end
     end
 
     def acts_as_full_calendar_event(args = {})
@@ -87,10 +91,6 @@ module ActsAsFullCalendarEvent
 
     def calendar_item_link_data_target
       self.public_send(acts_as_full_calendar_event_options[:field_link_data_target])
-    end
-
-    def calendar_category_class
-      self.public_send(acts_as_full_calendar_event_options[:field_category_class])
     end
   end
 end

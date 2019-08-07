@@ -2,11 +2,10 @@
 # frozen_string_literal: true
 
 $:.push File.expand_path("../lib", __FILE__)
-require "acts_as_full_calendar_event/version"
 
 Gem::Specification.new do |s|
   s.name        = "acts_as_full_calendar_event"
-  s.version     = ActsAsFullCalendarEvent::VERSION
+  s.version     = "1.0.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ryan"]
   s.email       = ["ryanto"]
