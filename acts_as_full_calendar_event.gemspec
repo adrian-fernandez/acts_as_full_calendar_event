@@ -5,12 +5,13 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "acts_as_full_calendar_event"
-  s.version     = "1.0.1"
+  s.version     = "1.0.2"
   s.platform    = Gem::Platform::RUBY
+  s.author      = ["Adrian Fernandez"]
   s.email       = ["adrianfernandez85@gmail.com"]
   s.homepage    = "http://github.com/adrian-fernandez/acts_as_full_calendar_event"
-  s.summary     = "Rails gem to allowing records to be votable"
-  s.description = "Rails gem to allowing records to be votable"
+  s.summary     = "Rails gem to allowing models to be events for full calendar"
+  s.description = "Rails gem to allowing models to be events for full calendar"
   s.license     = "MIT"
 
   s.files         = `git ls-files`.split("\n")

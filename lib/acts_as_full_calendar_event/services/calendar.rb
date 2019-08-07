@@ -4,9 +4,6 @@ module ActsAsFullCalendarEvent
     private :user_id, :categories, :start_date, :end_date
 
     def initialize(params:)
-      raise(ArgumentError, "params must include 'start' having a date value") if params[:start].blank? || params[:start].class != Date
-      raise(ArgumentError, "params must include 'end' having a date value") if params[:end].blank? || params[:end].class != Date
-
       @user_id = params[:user_id] if params.has_key?(:user_id)
       @categories = JSON.parse(params[:categories] || '{}')
       @start_date = params[:start]

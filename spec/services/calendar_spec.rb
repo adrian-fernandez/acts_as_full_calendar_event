@@ -14,24 +14,24 @@ describe ActsAsFullCalendarEvent::Calendar do
       )}.not_to raise_error(ArgumentError)
     end
 
-    it "requires start" do
+    it "doesn't require start" do
       expect { ActsAsFullCalendarEvent::Calendar.new(
         params: {
           user_id: 1,
           end: Date.new(2018, 1, 31),
           categories: { "1": 1 }
         }
-      )}.to raise_error(ArgumentError)
+      )}.not_to raise_error(ArgumentError)
     end
 
-    it "requires end" do
+    it "doesn't require end" do
       expect { ActsAsFullCalendarEvent::Calendar.new(
         params: {
           user_id: 1,
           start: Date.new(2018, 1, 1),
           categories: { "1": 1 }
         }
-      )}.to raise_error(ArgumentError)
+      )}.not_to raise_error(ArgumentError)
     end
 
     it "doesn't require user_id" do
