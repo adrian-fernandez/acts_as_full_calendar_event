@@ -66,7 +66,7 @@ Categories hash has the following structure:
 
 If some category class doesn't appear as hash key it will be ignored.
 
-`filter` method returns an `At
+`filter` method returns an `ActiveRecord::Relation` with all matching events
 
 ## Testing
 
