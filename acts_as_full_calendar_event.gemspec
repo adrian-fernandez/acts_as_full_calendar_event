@@ -7,11 +7,11 @@ Gem::Specification.new do |s|
   s.name        = "acts_as_full_calendar_event"
   s.version     = "1.0.0"
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Ryan"]
-  s.email       = ["ryanto"]
-  s.homepage    = "http://rubygems.org/gems/acts_as_votable"
-  s.summary     = "Rails gem to allowing records to be votable"
-  s.description = "Rails gem to allowing records to be votable"
+  s.authors     = ["Adrián Fernández"]
+  s.email       = ["adrianfernandez85@gmail.com"]
+  s.homepage    = "http://rubygems.org/gems/acts_as_full_calendar_event"
+  s.summary     = "Rails gem to allowing models to be events for FullCalendar"
+  s.description = "Rails gem to allowing models to be events for FullCalendar"
   s.license     = "MIT"
 
   s.files         = `git ls-files`.split("\n")
