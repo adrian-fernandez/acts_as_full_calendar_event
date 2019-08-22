@@ -5,6 +5,7 @@ module ActsAsFullCalendarEvent
       :start,
       :end,
       :title,
+      :description,
       :color,
       :textColor,
       :link_url,
@@ -22,6 +23,10 @@ module ActsAsFullCalendarEvent
 
     def title
       object.calendar_item_title
+    end
+
+    def description
+      object.calendar_item_description
     end
 
     def color

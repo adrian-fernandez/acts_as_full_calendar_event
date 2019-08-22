@@ -73,6 +73,10 @@ module ActsAsFullCalendarEvent
       self.public_send(acts_as_full_calendar_event_options[:field_title])
     end
 
+    def calendar_item_description
+      self.public_send(acts_as_full_calendar_event_options[:field_description])
+    end
+
     def calendar_item_color
       self.public_send(acts_as_full_calendar_event_options[:field_color])
     end
