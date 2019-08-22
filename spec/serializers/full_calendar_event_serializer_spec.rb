@@ -14,6 +14,7 @@ describe ActsAsFullCalendarEvent::FullCalendarEventSerializer do
       start: Date.new(2018, 1, 1),
       end: Date.new(2018, 1, 31),
       title: "title",
+      description: "description",
       color: "#FF0000",
       textColor: "#AAFFBB",
       link_url: "URL",

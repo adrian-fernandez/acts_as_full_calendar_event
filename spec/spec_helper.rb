@@ -56,6 +56,7 @@ class Event < ActiveRecord::Base
   acts_as_full_calendar_event field_start: :calendar_inicio,
     field_end: :calendar_fin,
     field_title: :calendar_title,
+    field_description: :calendar_description,
     field_color: :calendar_color,
     field_text_color: :calendar_text_color,
     field_url: :url_for_calendar,
@@ -104,6 +105,10 @@ class Event < ActiveRecord::Base
     "title"
   end
 
+  def calendar_description
+    "description"
+  end
+
   def calendar_color
     "#FF0000"
   end
@@ -131,6 +136,7 @@ class OtherEvent < ActiveRecord::Base
   acts_as_full_calendar_event field_start: :calendar_inicio,
     field_end: :calendar_fin,
     field_title: :calendar_title,
+    field_description: :calendar_description,
     field_color: :calendar_color,
     field_text_color: :calendar_text_color,
     field_url: :url_for_calendar,
@@ -165,6 +171,10 @@ class OtherEvent < ActiveRecord::Base
 
   def calendar_title
     "title"
+  end
+
+  def calendar_description
+    "description"
   end
 
   def calendar_color
