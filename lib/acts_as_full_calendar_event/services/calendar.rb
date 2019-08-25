@@ -1,13 +1,14 @@
 module ActsAsFullCalendarEvent
   class Calendar
-    attr_reader :user_id, :categories, :items, :start_date, :end_date
-    private :user_id, :categories, :start_date, :end_date
+    attr_reader :user_id, :categories, :items, :start_date, :end_date, :custom_filter
+    private :user_id, :categories, :start_date, :end_date, :custom_filter
 
     def initialize(params:)
       @user_id = params[:user_id] if params.has_key?(:user_id)
       @categories = JSON.parse(params[:categories] || '{}')
       @start_date = params[:start]
       @end_date = params[:end]
+      @custom_filter = params[:custom_filter]
     end
 
     def filter
@@ -15,6 +16,7 @@ module ActsAsFullCalendarEvent
 
       item_classes.each do |item_class|
         items = item_class.calendar_items
+        items = custom_filter.call(items) if custom_filter.present?
         items = filter_by_category(items, item_class) if has_categories_filter?
         items = filter_by_date(items)
         items = filter_by_user(items) if has_user_filter?
