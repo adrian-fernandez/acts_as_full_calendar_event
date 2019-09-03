@@ -10,7 +10,8 @@ module ActsAsFullCalendarEvent
       :textColor,
       :link_url,
       :link_data_toggle,
-      :link_data_target
+      :link_data_target,
+      :extra_params
     )
 
     def start
@@ -55,6 +56,19 @@ module ActsAsFullCalendarEvent
 
     def link_data_toggle
       object.calendar_item_link_data_toggle
+    end
+
+    def extra_params
+      extra_params = object.acts_as_full_calendar_event_options[:extra_params]
+
+      return nil if extra_params.blank?
+
+      result = {}
+      extra_params.each do |extra_param|
+        result[extra_param[:name]] = object.public_send(extra_param[:value])
+      end
+
+      result
     end
   end
 end
