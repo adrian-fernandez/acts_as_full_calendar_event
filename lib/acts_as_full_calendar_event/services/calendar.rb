@@ -15,7 +15,6 @@ module ActsAsFullCalendarEvent
       @items = []
 
       item_classes.each do |item_class|
-        byebug
         items = item_class.calendar_items
         items = filter_by_category(items, item_class) if has_categories_filter?
         items = filter_by_date(items)
