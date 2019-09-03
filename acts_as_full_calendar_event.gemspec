@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 # frozen_string_literal: true
 
-$:.push File.expand_path("../lib", __FILE__)
-
 Gem::Specification.new do |s|
   s.name        = "acts_as_full_calendar_event"
   s.version     = "1.0.4"
