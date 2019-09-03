@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "acts_as_full_calendar_event"
-  s.version     = "1.0.4"
+  s.version     = "1.0.5"
   s.platform    = Gem::Platform::RUBY
   s.author      = ["Adrian Fernandez"]
   s.email       = ["adrianfernandez85@gmail.com"]

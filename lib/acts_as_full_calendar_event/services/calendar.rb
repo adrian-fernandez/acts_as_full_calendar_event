@@ -15,11 +15,17 @@ module ActsAsFullCalendarEvent
       @items = []
 
       item_classes.each do |item_class|
+        byebug
         items = item_class.calendar_items
-        items = custom_filter.call(items) if custom_filter.present?
         items = filter_by_category(items, item_class) if has_categories_filter?
         items = filter_by_date(items)
         items = filter_by_user(items) if has_user_filter?
+
+        if custom_filter.present?
+          custom_filter.keys.each do |filter|
+            items = items.where(filter => custom_filter[filter])
+          end
+        end
 
         @items << items
       end
