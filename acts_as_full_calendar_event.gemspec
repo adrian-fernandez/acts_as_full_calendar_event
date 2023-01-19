@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rspec", "~> 3.6"
-  s.add_development_dependency "activerecord", "4.2.11.1"
+  s.add_development_dependency "activerecord", "6.1.7.1"
   s.add_development_dependency "sqlite3", "~> 1.3.6"
   s.add_development_dependency "rubocop", "~> 0.49.1"
   s.add_development_dependency "simplecov", "~> 0.15.0"
